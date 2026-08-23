@@ -1,0 +1,94 @@
+.logo-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-logo {
+  animation: popIn 1.2s ease forwards,
+             floatLogo 3s ease-in-out infinite;
+}
+
+.shine {
+  position: absolute;
+  top: -20%;
+  left: -60%;
+  width: 40%;
+  height: 160%;
+  transform: rotate(25deg);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.9),
+    transparent
+  );
+
+  animation: shine 2.4s infinite;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 999px;
+  animation: bounce 1s infinite;
+}
+
+.delay-200 {
+  animation-delay: .2s;
+}
+
+.delay-500 {
+  animation-delay: .4s;
+}
+
+@keyframes popIn {
+
+  from{
+    transform:scale(.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+
+}
+
+@keyframes floatLogo{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+@keyframes shine{
+
+0%{
+left:-60%;
+}
+
+100%{
+left:160%;
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+opacity:.5;
+}
+
+50%{
+transform:translateY(-8px);
+opacity:1;
+}
+
+}
