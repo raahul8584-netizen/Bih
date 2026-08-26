@@ -27,7 +27,7 @@ export default function LogoLoader({ forceShow = false }: LogoLoaderProps) {
       <div className="relative logo-wrapper">
 
         <img
-          src="/logo/whitelogo.png"
+          src="/logo/logo.png"
           className="w-[330px] md:w-[430px] animate-logo"
           alt="LogissHub"
         />

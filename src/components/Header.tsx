@@ -9,7 +9,7 @@ export default function Header() {
         {/* Brand Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <TronisLogo />
+            <img src="/logo.png" alt="Tronis Logo" className="h-12 w-auto" />
           </Link>
         </div>
 

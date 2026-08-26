@@ -26,7 +26,7 @@ export default function InvoiceModal({ show, onClose, invoice, user, profile }: 
         <div id="invoice-content">
           <div className="flex justify-between mb-[40px] border-b-2 border-[#eee] pb-[20px]">
             <div>
-              <img src="/logo/blacklogo.png" alt="Logistic Hub Logo" className="h-[50px] mb-[10px] object-contain" />
+              <img src="/logo/blogo.png" alt="Logistic Hub Logo" className="h-[50px] mb-[10px] object-contain" />
               <p className="m-0 font-bold text-[18px]">Logistic Hub Official Invoice</p>
             </div>
             <div className="text-right">

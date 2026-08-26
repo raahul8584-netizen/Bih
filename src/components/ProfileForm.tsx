@@ -75,7 +75,7 @@ export default function ProfileForm({ user, onSuccess }: ProfileFormProps) {
 
         <div className="relative z-10">
           <div className="mb-12">
-            <img src="/logo/whitelogo.png" alt="Logo" className="h-20 w-auto object-contain" />
+            <img src="/logo/logo.png" alt="Logo" className="h-20 w-auto object-contain" />
           </div>
 
           <h1 className="text-5xl font-black text-white leading-tight mb-6 tracking-tighter">
@@ -122,7 +122,7 @@ export default function ProfileForm({ user, onSuccess }: ProfileFormProps) {
       <div className="flex-1 flex items-center justify-center p-8 lg:p-16 overflow-y-auto">
         <div className="w-full max-w-2xl">
           <div className="lg:hidden mb-10 text-center">
-            <img src="/logo/blacklogo.png" alt="Logo" className="h-16 mx-auto object-contain" />
+            <img src="/logo/blogo.png" alt="Logo" className="h-16 mx-auto object-contain" />
           </div>
 
           <div className="mb-10">

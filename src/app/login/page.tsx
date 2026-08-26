@@ -45,7 +45,7 @@ export default function Login() {
           </Link>
 
           <div className="mb-8">
-            <img src="/logo/whitelogo.png" alt="Logo" className="h-20 w-auto object-contain" />
+            <img src="/logo/logo.png" alt="Logo" className="h-20 w-auto object-contain" />
           </div>
 
           <h1 className="text-5xl font-extrabold text-white leading-tight mb-6">
@@ -95,7 +95,7 @@ export default function Login() {
       <div className="flex-1 flex items-center justify-center p-8 lg:p-16">
         <div className="w-full max-w-md">
           <div className="lg:hidden mb-10 text-center">
-            <img src="/logo/blacklogo.png" alt="Logo" className="h-16 mx-auto mb-4 object-contain" />
+            <img src="/logo/blogo.png" alt="Logo" className="h-16 mx-auto mb-4 object-contain" />
           </div>
 
           <div className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-8 lg:p-12 border border-gray-100">

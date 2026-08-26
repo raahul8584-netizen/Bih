@@ -23,7 +23,7 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, processes }
     <aside className="w-[260px] bg-[#232F3E] text-white flex flex-col fixed h-screen z-[100]">
       <div className="p-[25px] flex items-center">
         <img
-          src="/logo/whitelogo.png"
+          src="/logo/logo.png"
           alt="Logistic Hub Logo"
           className="h-[50px] w-auto object-contain"
         />

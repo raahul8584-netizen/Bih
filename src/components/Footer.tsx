@@ -41,13 +41,13 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-400 pt-20 pb-10 border-t border-white/5 font-sans">
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-        
+
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-          
+
           {/* Logo & Slogan Column */}
           <div className="md:col-span-4 space-y-4">
-            <TronisLogo />
+            <img src="/logo.png" alt="Tronis Logo" className="h-12 w-auto" />
             <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
               Delivering trust. Powering growth. Join the nation's leading hub partner network.
             </p>
@@ -126,7 +126,7 @@ export default function Footer() {
           <div>
             <p>© {currentYear} ADSP Logistic Hub. All rights reserved.</p>
           </div>
-          
+
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white transition-colors"><FiFacebook className="w-4.5 h-4.5" /></a>
             <a href="#" className="hover:text-white transition-colors"><FiTwitter className="w-4.5 h-4.5" /></a>

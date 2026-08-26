@@ -51,7 +51,7 @@ export default function BottomGrid() {
           </div>
 
           {/* Column 2: Our Partners Grid */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block">
               OUR PARTNERS
             </span>
@@ -67,7 +67,7 @@ export default function BottomGrid() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Column 3: Latest News Feed */}
           <div className="space-y-4">
