@@ -208,7 +208,7 @@ console.log("Processes data:", processes);
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 text-gray-900">
       <div className="mb-[30px]">
-        <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]">Onboarding Process Details</h1>
+        <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]" style={{ color: '#232F3E' }}>Onboarding Process Details</h1>
         <p className="text-[#565959] m-0">Follow these steps to complete your Logistic Hub activation.</p>
       </div>
 
@@ -236,7 +236,7 @@ function ProcessCard({ title, status, cost, description, isActionable, onDownloa
       }`}>
       <div className="flex justify-between items-start mb-[15px]">
         <div>
-          <h3 className="m-0 mb-[5px] font-bold text-[#232F3E]">{title}</h3>
+          <h3 className="m-0 mb-[5px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>{title}</h3>
           <div className="flex gap-[10px] items-center">
             <span className={`text-[11px] font-bold px-[8px] py-[4px] rounded-[4px] uppercase ${status === 'Completed' ? 'bg-[#f0f9f4] text-[#2ecc71]' :
               status === 'Pending Payment' ? 'bg-[#fff7ed] text-[#f39c12]' :
