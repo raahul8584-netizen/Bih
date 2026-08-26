@@ -287,7 +287,7 @@ function FormGroup({ label, name, value, onChange, placeholder, disabled, icon, 
           placeholder={placeholder}
           maxLength={maxLength}
           pattern={pattern}
-          className={`w-full pl-11 pr-4 py-2.5 border rounded-[12px] outline-none transition-all ${disabled
+          className={`w-full pl-11 pr-4 py-2.5 border rounded-[12px] outline-none transition-all text-gray-900 ${disabled
             ? 'bg-gray-50 border-gray-200 text-gray-400 cursor-not-allowed'
             : 'bg-white border-gray-300 focus:border-[#FF9900] focus:ring-4 focus:ring-orange-50 shadow-sm'
             }`}
