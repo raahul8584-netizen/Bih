@@ -250,7 +250,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 w-full pb-[50px]">
       <div className="mb-[30px]">
-        <h1 className="text-[26px] font-bold mb-[5px]">Account Settings</h1>
+        <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]" style={{ color: '#232F3E' }}>Account Settings</h1>
         <p className="text-[#565959] m-0">Manage your profile details and support queries.</p>
       </div>
 
@@ -260,7 +260,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
           <div className="bg-white rounded-[12px] shadow-sm border border-[#eee] overflow-hidden">
             <div className="p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center gap-[10px]">
               <FiUser className="text-[#FF9900]" />
-              <h3 className="m-0 font-bold text-[15px]">Business Profile</h3>
+              <h3 className="m-0 font-bold text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Business Profile</h3>
             </div>
             <div className="p-[20px] grid grid-cols-1 gap-[20px]">
               <InfoItem label="Full Name" value={profile?.Name} icon={<FiUser />} />
@@ -311,7 +311,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
           <div className="bg-white rounded-[12px] shadow-sm border border-[#eee] overflow-hidden">
             <div className="p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center gap-[10px]">
               <FiMessageCircle className="text-[#FF9900]" />
-              <h3 className="m-0 font-bold text-[15px]">Support Helpline</h3>
+              <h3 className="m-0 font-bold text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Support Helpline</h3>
             </div>
             <div className="p-[20px]">
               <div className="flex flex-col gap-[12px]">
@@ -334,7 +334,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
           <div className="bg-white rounded-[12px] shadow-sm border border-[#eee] overflow-hidden">
             <div className="p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center gap-[10px]">
               <FiShield className="text-[#FF9900]" />
-              <h3 className="m-0 font-bold text-[15px]">Security & Password</h3>
+              <h3 className="m-0 font-bold text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Security & Password</h3>
             </div>
             <div className="p-[20px]">
               <div className="bg-[#fff9eb] border border-[#ffe8cc] rounded-[10px] p-[15px] flex gap-[12px]">
@@ -356,7 +356,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
           <div className="p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center justify-between">
             <div className="flex items-center gap-[10px]">
               <FiMessageCircle className="text-[#FF9900]" />
-              <h3 className="m-0 font-bold text-[15px]">Support Tickets</h3>
+              <h3 className="m-0 font-bold text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Support Tickets</h3>
             </div>
             <button
               onClick={() => setShowNewModal(true)}
@@ -494,7 +494,7 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
       {showNewModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4">
           <div className="bg-white w-full max-w-[500px] rounded-[12px] p-[25px] animate-in zoom-in-95 duration-200">
-            <h3 className="m-0 mb-[20px] font-bold">New Support Query</h3>
+            <h3 className="m-0 mb-[20px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>New Support Query</h3>
 
             <div className="flex flex-col gap-[15px] mb-[25px]">
               <div>

@@ -93,7 +93,7 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
     <div className="animate-in fade-in duration-500">
       <div className="flex justify-between items-end mb-[30px]">
         <div>
-          <h1 className="text-[26px] font-bold mb-[5px]">Logistic Hub Dashboard</h1>
+          <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]" style={{ color: '#232F3E' }}>Logistic Hub Dashboard</h1>
           <p className="text-[#565959] m-0">Welcome back! Here's what's happening with your hub today.</p>
         </div>
         <button
@@ -121,7 +121,7 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
         {/* Onboarding Stepper */}
         <div className="bg-white rounded-[12px] p-[25px] shadow-sm">
           <div className="flex justify-between items-center mb-[20px]">
-            <h3 className="m-0 font-bold">Onboarding Process</h3>
+            <h3 className="m-0 font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>Onboarding Process</h3>
             <button
               onClick={() => setActiveTab('process')}
               className="border-none bg-transparent text-[#FF9900] font-semibold cursor-pointer text-[13px]"
@@ -146,7 +146,7 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
 
         {/* Document Checklist */}
         <div className="bg-white rounded-[12px] p-[25px] shadow-sm">
-          <h3 className="m-0 mb-[20px] font-bold">Required Documents</h3>
+          <h3 className="m-0 mb-[20px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>Required Documents</h3>
           <div className="grid grid-cols-1 gap-[12px]">
             {documents.map((doc, index) => (
               <DocItem key={index} label={doc.label} verified={doc.verified} />
@@ -232,7 +232,7 @@ const isPositive = trend?.startsWith("+");
         </span>
       </div>
       <p className="m-0 mb-[5px] text-[#565959] text-[14px]">{label}</p>
-      <h2 className="m-0 text-[24px] font-bold">{value}</h2>
+      <h2 className="m-0 text-[24px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>{value}</h2>
     </div>
   );
 }

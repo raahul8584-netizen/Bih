@@ -111,7 +111,7 @@ export default function DashboardPage() {
           ) : (
             <div className="py-[100px] text-center">
               <FiBox size={60} className="text-[#ddd] mx-auto" />
-              <h2 className="text-[#888] mt-[20px] text-xl font-medium">
+              <h2 className="text-[#232F3E] mt-[20px] text-xl font-bold" style={{ color: '#232F3E' }}>
                 {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} view coming soon...
               </h2>
             </div>

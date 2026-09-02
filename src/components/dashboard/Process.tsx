@@ -12,6 +12,37 @@ interface ProcessProps {
 export default function Process({ handleDownloadInvoice, processes, profile }: ProcessProps) {
   const [profileId, setProfileId] = useState<number | null>(null);
   const [documentId, setDocumentId] = useState<string | null>(null);
+  const [support, setSupport] = useState({
+    phone: "1800-ADSP-HUB",
+    whatsapp: "+91 99999 99999",
+    mail: "support@adsp-hub.in",
+    url: "",
+  });
+
+  const apiurl = process.env.NEXT_PUBLIC_STRAPI_URL;
+
+  useEffect(() => {
+    if (!apiurl) return;
+
+    fetch(`${apiurl}/api/supports`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch");
+        return res.json();
+      })
+      .then((result) => {
+        const supportData = result.data?.[0] || result?.[0];
+        if (supportData) {
+          const attributes = supportData.attributes || supportData;
+          setSupport({
+            phone: attributes.supportnumber || supportData.supportnumber || "1800-ADSP-HUB",
+            whatsapp: attributes.supportwhatapp || supportData.supportwhatapp || "+91 99999 99999",
+            mail: attributes.supportmail || supportData.supportmail || "support@adsp-hub.in",
+            url: attributes.url || supportData.url || "",
+          });
+        }
+      })
+      .catch((err) => console.error("Error fetching support:", err));
+  }, [apiurl]);
 
   useEffect(() => {
     const fetchProfileId = async () => {
@@ -98,7 +129,8 @@ console.log("Processes data:", processes);
           ...profile,
           strapiId: profileId ?? profile?.strapiId ?? profile?.id,
           id: documentId ?? profile?.documentId ?? profile?.id
-        }
+        },
+        url: support.url
       } as any)
     },
     {
@@ -128,7 +160,8 @@ console.log("Processes data:", processes);
           ...profile,
           strapiId: profileId ?? profile?.strapiId ?? profile?.id,
           id: documentId ?? profile?.documentId ?? profile?.id
-        }
+        },
+        url: support.url
       } as any)
     },
     {
@@ -152,7 +185,8 @@ console.log("Processes data:", processes);
           ...profile,
           strapiId: profileId ?? profile?.strapiId ?? profile?.id,
           id: documentId ?? profile?.documentId ?? profile?.id
-        }
+        },
+        url: support.url
       } as any)
     },
     {
@@ -176,7 +210,8 @@ console.log("Processes data:", processes);
           ...profile,
           strapiId: profileId ?? profile?.strapiId ?? profile?.id,
           id: documentId ?? profile?.documentId ?? profile?.id
-        }
+        },
+        url: support.url
       } as any)
     },
     {
@@ -200,7 +235,8 @@ console.log("Processes data:", processes);
           ...profile,
           strapiId: profileId ?? profile?.strapiId ?? profile?.id,
           id: documentId ?? profile?.documentId ?? profile?.id
-        }
+        },
+        url: support.url
       } as any)
     }
   ];

@@ -119,6 +119,7 @@ export const generateInvoicePDF = async (data: {
     country?: string;
     profile?: any;
     partnerCode?: string;
+    url?: string;
 }) => {
     console.log("Invoice Data Received:", data);
     const doc = new jsPDF();
@@ -172,9 +173,11 @@ export const generateInvoicePDF = async (data: {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(9.5);
     doc.text("GSTIN 27AAJCA9880A1ZJ", 110, 41, { align: "center" });
-    doc.setTextColor(blue[0], blue[1], blue[2]);
-    doc.setFontSize(9);
-    doc.text("https://www.logisshub.info/", 110, 46, { align: "center" });
+    if (data.url) {
+      doc.setTextColor(blue[0], blue[1], blue[2]);
+      doc.setFontSize(9);
+      doc.text(data.url, 110, 46, { align: "center" });
+    }
 
     doc.setFontSize(18); // Modern big title
     doc.setTextColor(0);
