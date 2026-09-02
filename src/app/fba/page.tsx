@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Eligibility from '@/components/Eligibility';
 import DocsKYC from '@/components/DocsKYC';
 import ApplicationProcess from '@/components/ApplicationProcess';
+import PayoutStructure from '@/components/PayoutStructure';
 import Link from 'next/link';
 import LogoLoader from '@/components/UI/logoloder/Logoloder';
 
@@ -41,6 +42,7 @@ export default function PartnerProgramPage() {
       <Eligibility />
       <DocsKYC />
       <ApplicationProcess />
+      <PayoutStructure />
 
       <Footer />
     </main>

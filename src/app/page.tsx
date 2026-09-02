@@ -4,6 +4,7 @@ import SmartOperations from '@/components/SmartOperations';
 import Eligibility from '@/components/Eligibility';
 import DocsKYC from '@/components/DocsKYC';
 import ApplicationProcess from '@/components/ApplicationProcess';
+import PayoutStructure from '@/components/PayoutStructure';
 import BottomGrid from '@/components/BottomGrid';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Eligibility />
       <DocsKYC />
       <ApplicationProcess />
+      <PayoutStructure />
       <BottomGrid />
 
       {/* CTA Banner */}
