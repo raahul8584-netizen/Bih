@@ -42,7 +42,7 @@ export default function BottomGrid() {
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-slate-700" />
                   <div>
-                    <h4 className="font-bold text-white text-xs">Rohit Sharma</h4>
+                    <h4 className="font-bold text-white text-xs">Madhu Ranjan Sharma</h4>
                     <span className="text-[9px] text-slate-500 uppercase tracking-wider block">Delivery Partner</span>
                   </div>
                 </div>
