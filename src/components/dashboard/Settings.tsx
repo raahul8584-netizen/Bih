@@ -248,21 +248,21 @@ export default function Settings({ user, profile, refreshData }: SettingsProps) 
   };
 
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 w-full pb-[50px]">
-      <div className="mb-[30px]">
-        <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]" style={{ color: '#232F3E' }}>Account Settings</h1>
-        <p className="text-[#565959] m-0">Manage your profile details and support queries.</p>
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 w-full max-w-full overflow-hidden pb-[50px]">
+      <div className="mb-5 sm:mb-[30px]">
+        <h1 className="text-xl sm:text-[26px] font-bold mb-1 text-[#232F3E]" style={{ color: '#232F3E' }}>Account Settings</h1>
+        <p className="text-[#565959] m-0 text-xs sm:text-sm">Manage your profile details and support queries.</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-[30px]">
         {/* Left Column: Profile & Support Info */}
-        <div className="flex flex-col gap-[30px]">
+        <div className="flex flex-col gap-4 sm:gap-[30px]">
           <div className="bg-white rounded-[12px] shadow-sm border border-[#eee] overflow-hidden">
-            <div className="p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center gap-[10px]">
+            <div className="p-3.5 sm:p-[15px] bg-[#f8f9fa] border-b border-[#eee] flex items-center gap-[10px]">
               <FiUser className="text-[#FF9900]" />
-              <h3 className="m-0 font-bold text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Business Profile</h3>
+              <h3 className="m-0 font-bold text-sm sm:text-[15px] text-[#232F3E]" style={{ color: '#232F3E' }}>Business Profile</h3>
             </div>
-            <div className="p-[20px] grid grid-cols-1 gap-[20px]">
+            <div className="p-4 sm:p-[20px] grid grid-cols-1 gap-4 sm:gap-[20px]">
               <InfoItem label="Full Name" value={profile?.Name} icon={<FiUser />} />
               <InfoItem label="Email Address" value={user?.email} icon={<FiMail />} />
               <div className="flex flex-col gap-[4px] relative">

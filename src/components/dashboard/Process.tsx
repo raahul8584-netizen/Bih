@@ -293,26 +293,26 @@ console.log("Processes data:", processes);
 
 function ProcessCard({ title, status, cost, description, isActionable, onDownload, isLocked, onPayNow }: any) {
   return (
-    <div className={`bg-white text-gray-900 rounded-[12px] p-[25px] shadow-sm border border-[#eee] transition-all duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : ''
+    <div className={`bg-white text-gray-900 rounded-[12px] p-4 sm:p-[25px] shadow-sm border border-[#eee] transition-all duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : ''
       }`}>
-      <div className="flex justify-between items-start mb-[15px]">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-[15px]">
         <div>
-          <h3 className="m-0 mb-[5px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>{title}</h3>
-          <div className="flex gap-[10px] items-center">
+          <h3 className="m-0 mb-1 font-bold text-sm sm:text-base text-[#232F3E]" style={{ color: '#232F3E' }}>{title}</h3>
+          <div className="flex flex-wrap gap-[10px] items-center">
             <span className={`text-[11px] font-bold px-[8px] py-[4px] rounded-[4px] uppercase ${status === 'Completed' ? 'bg-[#f0f9f4] text-[#2ecc71]' :
               status === 'Pending Payment' ? 'bg-[#fff7ed] text-[#f39c12]' :
                 'bg-[#f8f8f8] text-[#888]'
               }`}>
               {status}
             </span>
-            <span className="text-[14px] font-bold text-[#131921]">{cost}</span>
+            <span className="text-[13px] sm:text-[14px] font-bold text-[#131921]">{cost}</span>
           </div>
         </div>
-        <div className="flex gap-[10px]">
+        <div className="flex gap-[10px] shrink-0 w-full sm:w-auto">
           {onDownload && status === 'Completed' && (
             <button
               onClick={onDownload}
-              className="px-[15px] py-[8px] rounded-[6px] border border-[#ddd] bg-white text-[13px] font-semibold cursor-pointer flex items-center gap-[5px] hover:bg-gray-50 transition-colors"
+              className="px-3 sm:px-[15px] py-2 sm:py-[8px] rounded-[6px] border border-[#ddd] bg-white text-xs sm:text-[13px] font-semibold cursor-pointer flex items-center justify-center gap-[5px] hover:bg-gray-50 transition-colors flex-1 sm:flex-initial"
             >
               Invoice <FiPlus size={14} />
             </button>
@@ -321,14 +321,14 @@ function ProcessCard({ title, status, cost, description, isActionable, onDownloa
             <button
               disabled={isLocked}
               onClick={onPayNow}
-              className="px-[20px] py-[8px] text-[13px] bg-[#FF9900] text-white border-none rounded-[6px] font-semibold cursor-pointer hover:bg-[#e68a00] transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="px-4 sm:px-[20px] py-2 sm:py-[8px] text-xs sm:text-[13px] bg-[#FF9900] text-white border-none rounded-[6px] font-semibold cursor-pointer hover:bg-[#e68a00] transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed flex-1 sm:flex-initial shadow-xs"
             >
               Pay Now
             </button>
           )}
         </div>
       </div>
-      <p className="m-0 text-[14px] text-[#565959] leading-[1.6]">{description}</p>
+      <p className="m-0 text-xs sm:text-[14px] text-[#565959] leading-[1.6]">{description}</p>
     </div>
   );
 }

@@ -17,6 +17,7 @@ import { FiBox } from 'react-icons/fi';
 export default function DashboardPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('overview');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [showInvoice, setShowInvoice] = useState(false);
   const [selectedInvoice, setSelectedInvoice] = useState<any>(null);
@@ -95,18 +96,24 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#f4f7f6] text-[#131921]">
+    <div className="flex min-h-screen bg-[#f4f7f6] text-[#131921] relative overflow-x-hidden">
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         onLogout={handleLogout} 
         processes={processes}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
       />
 
-      <main className="flex-1 ml-[260px] flex flex-col">
-        <Navbar user={user} profile={profile} />
+      <main className="flex-1 ml-0 lg:ml-[260px] flex flex-col w-full min-w-0 transition-all duration-300">
+        <Navbar 
+          user={user} 
+          profile={profile} 
+          onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+        />
 
-        <div className="p-[30px] flex-1">
+        <div className="p-4 sm:p-6 lg:p-[30px] flex-1 w-full max-w-full overflow-hidden">
           {/* Action Notifications */}
           <NotificationBanner addProcesses={addProcesses} />
 

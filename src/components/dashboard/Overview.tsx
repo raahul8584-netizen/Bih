@@ -90,22 +90,22 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
   const pendingDocs = documents.filter(doc => !doc.verified).map(doc => doc.label);
 
   return (
-    <div className="animate-in fade-in duration-500">
-      <div className="flex justify-between items-end mb-[30px]">
+    <div className="animate-in fade-in duration-500 max-w-full overflow-hidden">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-5 sm:mb-[30px]">
         <div>
-          <h1 className="text-[26px] font-bold mb-[5px] text-[#232F3E]" style={{ color: '#232F3E' }}>Logistic Hub Dashboard</h1>
-          <p className="text-[#565959] m-0">Welcome back! Here's what's happening with your hub today.</p>
+          <h1 className="text-xl sm:text-[26px] font-bold mb-1 text-[#232F3E]" style={{ color: '#232F3E' }}>Logistic Hub Dashboard</h1>
+          <p className="text-[#565959] m-0 text-xs sm:text-sm">Welcome back! Here's what's happening with your hub today.</p>
         </div>
         <button
           onClick={() => alert('Your onboarding process is still pending! Please complete all the steps to enable shipment creation.')}
-          className="flex items-center gap-[8px] bg-[#FF9900] text-white px-[20px] py-[10px] rounded-[8px] font-semibold border-none cursor-pointer hover:bg-[#e68a00] transition-colors"
+          className="flex items-center gap-[8px] bg-[#FF9900] text-white px-4 sm:px-[20px] py-2.5 sm:py-[10px] rounded-[8px] font-semibold border-none cursor-pointer hover:bg-[#e68a00] transition-colors text-xs sm:text-sm shrink-0"
         >
           <FiPlus /> Create New Shipment
         </button>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] mb-[40px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-[25px] mb-6 sm:mb-[40px]">
         {stats.map((stat, index) => (
           <StatCard
             key={index}
@@ -117,14 +117,14 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[25px] mb-[30px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-[25px] mb-[30px]">
         {/* Onboarding Stepper */}
-        <div className="bg-white rounded-[12px] p-[25px] shadow-sm">
-          <div className="flex justify-between items-center mb-[20px]">
-            <h3 className="m-0 font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>Onboarding Process</h3>
+        <div className="bg-white rounded-[12px] p-4 sm:p-[25px] shadow-sm">
+          <div className="flex justify-between items-center mb-4 sm:mb-[20px]">
+            <h3 className="m-0 font-bold text-sm sm:text-base text-[#232F3E]" style={{ color: '#232F3E' }}>Onboarding Process</h3>
             <button
               onClick={() => setActiveTab('process')}
-              className="border-none bg-transparent text-[#FF9900] font-semibold cursor-pointer text-[13px]"
+              className="border-none bg-transparent text-[#FF9900] font-semibold cursor-pointer text-xs sm:text-[13px]"
             >
               View Details
             </button>
@@ -145,8 +145,8 @@ export default function Overview({ setActiveTab, profile, processes }: OverviewP
         </div>
 
         {/* Document Checklist */}
-        <div className="bg-white rounded-[12px] p-[25px] shadow-sm">
-          <h3 className="m-0 mb-[20px] font-bold text-[#232F3E]" style={{ color: '#232F3E' }}>Required Documents</h3>
+        <div className="bg-white rounded-[12px] p-4 sm:p-[25px] shadow-sm">
+          <h3 className="m-0 mb-4 sm:mb-[20px] font-bold text-sm sm:text-base text-[#232F3E]" style={{ color: '#232F3E' }}>Required Documents</h3>
           <div className="grid grid-cols-1 gap-[12px]">
             {documents.map((doc, index) => (
               <DocItem key={index} label={doc.label} verified={doc.verified} />
