@@ -59,6 +59,14 @@ export default function DashboardPage() {
   useEffect(() => {
     setMounted(true);
     fetchData();
+
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get('tab');
+      if (tab) {
+        setActiveTab(tab);
+      }
+    }
   }, [router]);
 
   const handleLogout = () => {

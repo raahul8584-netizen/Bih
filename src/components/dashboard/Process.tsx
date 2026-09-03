@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { generateInvoicePDF } from "../UI/InvoiceGenerator";
+import Paymentgateway from '../UI/paymentgateway';
 import { FiPlus } from 'react-icons/fi';
 
 interface ProcessProps {
@@ -12,6 +13,15 @@ interface ProcessProps {
 export default function Process({ handleDownloadInvoice, processes, profile }: ProcessProps) {
   const [profileId, setProfileId] = useState<number | null>(null);
   const [documentId, setDocumentId] = useState<string | null>(null);
+  const [paymentModal, setPaymentModal] = useState<{
+    isOpen: boolean;
+    amount: string;
+    processName: string;
+  }>({
+    isOpen: false,
+    amount: '0',
+    processName: '',
+  });
   const [support, setSupport] = useState({
     phone: "1800-ADSP-HUB",
     whatsapp: "+91 99999 99999",
@@ -259,14 +269,29 @@ console.log("Processes data:", processes);
             isActionable={step.isActionable && step.status === 'Active'}
             isLocked={step.isLocked}
             onDownload={step.onDownload}
+            onPayNow={() => setPaymentModal({
+              isOpen: true,
+              amount: step.cost,
+              processName: step.title,
+            })}
           />
         ))}
       </div>
+
+      {paymentModal.isOpen && (
+        <Paymentgateway
+          isOpen={paymentModal.isOpen}
+          amount={paymentModal.amount}
+          processName={paymentModal.processName}
+          customerName={customerName}
+          onClose={() => setPaymentModal({ isOpen: false, amount: '0', processName: '' })}
+        />
+      )}
     </div>
   );
 }
 
-function ProcessCard({ title, status, cost, description, isActionable, onDownload, isLocked }: any) {
+function ProcessCard({ title, status, cost, description, isActionable, onDownload, isLocked, onPayNow }: any) {
   return (
     <div className={`bg-white text-gray-900 rounded-[12px] p-[25px] shadow-sm border border-[#eee] transition-all duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : ''
       }`}>
@@ -295,7 +320,7 @@ function ProcessCard({ title, status, cost, description, isActionable, onDownloa
           {isActionable && (
             <button
               disabled={isLocked}
-              onClick={() => alert("We are redirecting you to the Payment gateway, but there seems to be a temporary issue with our Payment system. Please contact your Relationship Manager to continue with the payment.")}
+              onClick={onPayNow}
               className="px-[20px] py-[8px] text-[13px] bg-[#FF9900] text-white border-none rounded-[6px] font-semibold cursor-pointer hover:bg-[#e68a00] transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
             >
               Pay Now
@@ -307,3 +332,4 @@ function ProcessCard({ title, status, cost, description, isActionable, onDownloa
     </div>
   );
 }
+
